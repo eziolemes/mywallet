@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.mywallet.route.RouteEnum;
-import br.com.mywallet.route.Router;
+import br.com.mywallet.route.Route;
 
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,8 +25,14 @@ public class MainServlet extends HttpServlet {
 	}
 
 	protected void doExecute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Router router = new Router();
-		router.setRoute(RouteEnum.LOGOUT);
-		router.runRouter();
+		String action = request.getParameter("action");
+		
+		if(action.equals(Route.LOGIN)) {
+			
+			
+			
+//			Boolean allowAcess = 
+			
+		}
 	}
 }

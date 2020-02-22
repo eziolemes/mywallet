@@ -12,7 +12,7 @@ public class Router {
 			System.out.println("Logout");
 			break;
 		default:
-			System.out.println("Não encontrado");
+			System.out.println("Nï¿½o encontrado");
 			break;
 		}
 	}
