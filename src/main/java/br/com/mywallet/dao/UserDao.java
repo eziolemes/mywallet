@@ -16,8 +16,7 @@ public class UserDao extends GenericDao<UserBean>{
 		
 		try {
 			
-			user = (UserBean) em.createQuery("select u from user u where email = :email and password = :password")
-					.setParameter("email", login.getEmail()).setParameter("password", login.getPassword()).getSingleResult();
+			user = (UserBean) em.createQuery(" from UserBean where email='" + login.getEmail() + "' and password='" + login.getPassword() + "'").getResultList().get(0);
 			
 			return user;
 		} catch (Exception e) {

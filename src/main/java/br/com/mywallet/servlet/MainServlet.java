@@ -2,6 +2,7 @@ package br.com.mywallet.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,13 +40,24 @@ public class MainServlet extends HttpServlet {
 			Boolean allowAcess = loginBo.loginValidate(login);
 			
 			if(allowAcess) {
-				System.out.println("Allowed Access! Welcome.");
+				RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+				view.forward(request, response);
 			} else {
-				System.out.println("Denied Access! Verify your credencials");
+				
+				//https://cursos.alura.com.br/forum/topico-request-nao-esta-enviando-o-atributo-80977
+				
+				
+				
+				request.setAttribute("teste1", "ruela");
+				
+				RequestDispatcher view = request.getRequestDispatcher("login.jsp");
+				System.out.println(request.getParameter("teste1"));
+				view.forward(request, response);
 			}
 			
 		} else {
-			System.out.println("Rota inválida!");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/notFound.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 }
