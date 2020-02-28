@@ -8,8 +8,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import br.com.startup.workcontrol.model.bean.BaseEntity;
-
 @Entity
 @Table(name="client")
 public class ClienteBean implements BaseEntity{
@@ -59,6 +57,7 @@ public class ClienteBean implements BaseEntity{
 	private UserBean usuarioCadastro  = new UserBean();
 	private UserBean usuarioAlteracao = new UserBean();
 	private UserBean usuarioExclusao  = new UserBean();
+	
 	public Integer getId() {
 		return id;
 	}

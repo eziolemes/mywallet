@@ -2,8 +2,7 @@ package br.com.mywallet.dao;
 
 import javax.persistence.EntityManager;
 import br.com.mywallet.bean.UserBean;
-import br.com.startup.workcontrol.factory.ConnectionFactory;
-import br.com.startup.workcontrol.model.dao.GenericDao;
+import br.com.mywallet.connection.HibernateConnection;
 
 public class UserDao extends GenericDao<UserBean>{
 	
@@ -11,7 +10,7 @@ public class UserDao extends GenericDao<UserBean>{
 
 	public UserBean LoginValidate(UserBean login) {
 		
-		EntityManager em = new ConnectionFactory().getConnection();
+		EntityManager em = HibernateConnection.getEntityManager();
 		UserBean user = null;
 		
 		try {

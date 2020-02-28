@@ -1,6 +1,5 @@
 package br.com.mywallet.bean;
 
-import br.com.startup.workcontrol.model.bean.BaseEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

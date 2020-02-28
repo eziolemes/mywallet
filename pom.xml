@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>mywallet</groupId>
 	<artifactId>mywallet</artifactId>
-	<packaging>pom</packaging>  <!-- aqui, mudei de war para pom -->
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mywallet Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -12,20 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
-	<!-- adicionar projeto -->
-	<modules>
-		<module>mywallet</module> <!-- teste -->
-		<module>workcontrol</module> <!-- framework -->
-	</modules>
 
 	<dependencies>
-		<!-- aqui, projeto da framework -->
-		<dependency>
-			<groupId>br.com.startup</groupId>
-			<artifactId>workcontrol</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -54,11 +42,20 @@
 			<version>1.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.6.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.4.9.Final</version>
+			<version>5.4.6.Final</version>
 		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
