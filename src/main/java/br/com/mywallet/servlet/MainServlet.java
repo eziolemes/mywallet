@@ -40,21 +40,20 @@ public class MainServlet extends HttpServlet {
 			Boolean allowAcess = loginBo.loginValidate(login);
 			
 			if(allowAcess) {
-				RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+				//Abrir sessão
+				request.setAttribute("pageName", "Início");
+				RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 				view.forward(request, response);
 			} else {
-				
-				//https://cursos.alura.com.br/forum/topico-request-nao-esta-enviando-o-atributo-80977
-				
-				
-				
-				request.setAttribute("teste1", "ruela");
-				
+				request.setAttribute("erro", "Usuário ou senha inválido!");
 				RequestDispatcher view = request.getRequestDispatcher("login.jsp");
-				System.out.println(request.getParameter("teste1"));
 				view.forward(request, response);
 			}
 			
+		} else if(action.equals(Action.INDEX)) {
+			request.setAttribute("pageName", "Início");
+			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+			view.forward(request, response);
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/notFound.jsp");
 			dispatcher.forward(request, response);

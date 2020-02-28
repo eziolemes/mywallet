@@ -6,8 +6,9 @@ public class Action {
 	public static String actionVar = "action";
 	
 	public static String LOGIN = "login";
-	public static String LOGOUT= servlet + "?" + actionVar + "=logout";
-	public static String INDEX = servlet + "?" + actionVar + "=index";
+	public static String LOGOUT= "logout";
+	public static String INDEX = "index";
 	
 	public static String LOGIN_ROUTE = servlet + "?" + actionVar + "=" + LOGIN;
+	public static String INDEX_ROUTE = servlet + "?" + actionVar + "=" + INDEX;
 }

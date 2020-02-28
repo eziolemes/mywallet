@@ -4,11 +4,28 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>mywallet</groupId>
 	<artifactId>mywallet</artifactId>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>  <!-- aqui, mudei de war para pom -->
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mywallet Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<!-- adicionar projeto -->
+	<modules>
+		<module>mywallet</module> <!-- teste -->
+		<module>workcontrol</module> <!-- framework -->
+	</modules>
+
 	<dependencies>
+		<!-- aqui, projeto da framework -->
+		<dependency>
+			<groupId>br.com.startup</groupId>
+			<artifactId>workcontrol</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -17,26 +34,24 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.4-1200-jdbc41</version>
 		</dependency>
 
 		<dependency>
@@ -50,6 +65,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.38</version>
 		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>mywallet</finalName>
