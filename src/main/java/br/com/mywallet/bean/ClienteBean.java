@@ -1,5 +1,7 @@
 package br.com.mywallet.bean;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +32,7 @@ public class ClienteBean implements BaseEntity{
 	private String complemento;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataNascimento;
+	private Date dataNascimento;
 	private String sexo;
 	private String filhos;
 	private String obs;
@@ -38,20 +40,20 @@ public class ClienteBean implements BaseEntity{
 	private String ativo;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataCadastro;
+	private Date dataCadastro;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataAlteracao;
+	private Date dataAlteracao;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataExclusao;
+	private Date dataExclusao;
 	private String motivo;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataPrimeiraCompra;
+	private Date dataPrimeiraCompra;
 	
 	@Temporal(TemporalType.DATE)
-	private String dataUltimaCompra;
+	private Date dataUltimaCompra;
 	
 	private EstadoCivilBean estadoCivil = new EstadoCivilBean();
 	private UserBean usuarioCadastro  = new UserBean();
@@ -142,10 +144,10 @@ public class ClienteBean implements BaseEntity{
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	public String getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	public String getSexo() {
@@ -178,22 +180,22 @@ public class ClienteBean implements BaseEntity{
 	public void setAtivo(String ativo) {
 		this.ativo = ativo;
 	}
-	public String getDataCadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(String dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	public String getDataAlteracao() {
+	public Date getDataAlteracao() {
 		return dataAlteracao;
 	}
-	public void setDataAlteracao(String dataAlteracao) {
+	public void setDataAlteracao(Date dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
 	}
-	public String getDataExclusao() {
+	public Date getDataExclusao() {
 		return dataExclusao;
 	}
-	public void setDataExclusao(String dataExclusao) {
+	public void setDataExclusao(Date dataExclusao) {
 		this.dataExclusao = dataExclusao;
 	}
 	public String getMotivo() {
@@ -202,16 +204,16 @@ public class ClienteBean implements BaseEntity{
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
 	}
-	public String getDataPrimeiraCompra() {
+	public Date getDataPrimeiraCompra() {
 		return dataPrimeiraCompra;
 	}
-	public void setDataPrimeiraCompra(String dataPrimeiraCompra) {
+	public void setDataPrimeiraCompra(Date dataPrimeiraCompra) {
 		this.dataPrimeiraCompra = dataPrimeiraCompra;
 	}
-	public String getDataUltimaCompra() {
+	public Date getDataUltimaCompra() {
 		return dataUltimaCompra;
 	}
-	public void setDataUltimaCompra(String dataUltimaCompra) {
+	public void setDataUltimaCompra(Date dataUltimaCompra) {
 		this.dataUltimaCompra = dataUltimaCompra;
 	}
 	public EstadoCivilBean getEstadoCivil() {

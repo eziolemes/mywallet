@@ -11,8 +11,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Lista de entidades -->
-		<class>br.com.knowledge.model.bean.Categoria</class>
-		<class>br.com.knowledge.model.bean.Produto</class>
+		<class>br.com.mywallet.bean.ClienteBean</class>
+		<class>br.com.mywallet.bean.EstadoCivilBean</class>
+		<class>br.com.mywallet.bean.UserBean</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->
